@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import Button from '../../components/ui/Button';
 
 import {
   GRAY_LIGHT,
@@ -17,7 +18,7 @@ import {
   WHITE,
 } from '../../constants/styles';
 
-const SignInScreen = () => {
+const SignInScreen = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.main}>
@@ -27,21 +28,14 @@ const SignInScreen = () => {
           <TextInput
             style={[styles.textInput, {marginTop: 12}]}
             placeholder="Password"
+            secureTextEntry
           />
-          <TouchableOpacity style={styles.signInTouch} activeOpacity={0.6}>
-            <LinearGradient
-              style={styles.gradient}
-              colors={[GRADIENT_DARK, GRADIENT_MIDDLE, GRAY_LIGHT]}
-              start={{x: 0, y: 0}}
-              end={{x: 1, y: 0}}>
-              <Text style={styles.signInText}>Sign In</Text>
-            </LinearGradient>
-          </TouchableOpacity>
+          <Button title='SIGN IN' onPress={() => navigation.navigate('Home')}/>
         </View>
 
         <View style={styles.bottomView}>
           <Text style={styles.bottomText}>Don’t have an account? </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
             <Text style={[styles.bottomText, {textDecorationLine: 'underline'}]}>Sign Up</Text>
           </TouchableOpacity>
         </View>
@@ -74,22 +68,7 @@ const styles = StyleSheet.create({
     padding: 14,
     fontSize: 16,
   },
-  signInText: {
-    // fontFamily: 'Nunito-ExtraBold',
-    fontSize: 24,
-    textAlign: 'center',
-    color: WHITE,
-    marginHorizontal: 20,
-    marginVertical: 20,
-  },
-  signInTouch: {
-    marginTop: 42,
-    marginHorizontal: 18,
-  },
-  gradient: {
-    padding: 0,
-    borderRadius: 10,
-  },
+
   bottomView: {
     flexDirection: 'row',
     marginBottom: 28,

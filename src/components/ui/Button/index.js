@@ -1,18 +1,30 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, TouchableOpacity, ViewPropTypes} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import PropTypes from 'prop-types'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+import styles from './styles'
+import {GRADIENT_DARK, GRADIENT_MIDDLE, GRAY_LIGHT} from '../../../constants/styles'
 
-const index = () => {
+
+const index = ({title, onPress, btnStyle}) => {
   return (
-    <View style={styles.container}>
-      <Text>index</Text>
-    </View>
+    <TouchableOpacity style={[styles.signInTouch, {...btnStyle}]} activeOpacity={0.6} onPress={onPress}>
+      <LinearGradient
+        style={styles.gradient}
+        colors={[GRADIENT_DARK, GRADIENT_MIDDLE, GRAY_LIGHT]}
+        start={{x: 0, y: 0}}
+        end={{x: 1, y: 0}}>
+        <Text style={styles.signInText}>{title}</Text>
+      </LinearGradient>
+    </TouchableOpacity>
   );
 };
+
+index.propTypes = {
+  title: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
+  btnStyle: PropTypes.object,
+}
 
 export default React.memo(index);

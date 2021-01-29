@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text as NativeText} from 'react-native';
 
-import {PropTypes} from 'prop-types';
+import PropTypes from 'prop-types';
 
 const index = ({fontWeightAndStyle, size, style, children}) => {
   return <NativeText>{children}</NativeText>;
@@ -15,7 +15,7 @@ index.propTypes = {
     'semiBold',
   ]),
   size: PropTypes.oneOf([14, 15, 16, 17, 20, 22, 24, 28]),
-  style: PropTypes.ViewStyle,
+  style: PropTypes.object,
   children: PropTypes.any,
 };
 

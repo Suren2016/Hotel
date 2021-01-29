@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const UserDetailScreen = () => {
+const Hotel = () => {
   return (
     <View style={styles.container}>
-      <Text>UserDetailScreen</Text>
+      <Text>React.memo(HotelScreen)</Text>
     </View>
   );
 };
@@ -16,4 +16,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-export default React.memo(UserDetailScreen);
+
+export default React.memo(Hotel);

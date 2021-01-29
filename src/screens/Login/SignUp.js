@@ -4,7 +4,7 @@ import {View, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity} from 
 import { GRAY_LIGHT } from '../../constants/styles';
 import Button from '../../components/ui/Button/index'
 
-const SignUpScreen = ({navigation}) => {
+const SignUp = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.main}>
@@ -72,4 +72,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default React.memo(SignUpScreen);
+export default React.memo(SignUp);

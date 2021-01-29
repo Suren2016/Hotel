@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const HotelGalleryScreen = () => {
+const HotelGallery = () => {
   return (
     <View style={styles.container}>
       <Text>HotelGalleryScreen</Text>
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default React.memo(HotelGalleryScreen);
+export default React.memo(HotelGallery);

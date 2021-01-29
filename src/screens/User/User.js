@@ -4,7 +4,7 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 import {GRAY_LIGHT} from '../../constants/styles';
 
-const UserDetailScreen = ({navigation}) => {
+const User = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View
@@ -47,4 +47,4 @@ const styles = StyleSheet.create({
     fontWeight: '600'
   },
 });
-export default React.memo(UserDetailScreen);
+export default React.memo(User);

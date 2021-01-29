@@ -18,7 +18,7 @@ import {
   WHITE,
 } from '../../constants/styles';
 
-const SignInScreen = ({navigation}) => {
+const SignIn = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.main}>
@@ -80,4 +80,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default React.memo(SignInScreen);
+export default React.memo(SignIn);

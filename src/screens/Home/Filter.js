@@ -4,8 +4,10 @@ import {View, Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-nati
 
 import HeaderView from '../../components/ui/HeaderView/index';
 import {GRAY_LIGHT} from '../../constants/styles';
+import Button from '../../components/ui/Button/index'
 
 import BackArrowIcon from '../../resources/svg/left_black_arrow_icon.svg';
+import { ifIphoneX } from 'react-native-iphone-x-helper';
 
 const Filter = ({navigation}) => {
   return (
@@ -33,6 +35,7 @@ const Filter = ({navigation}) => {
       <View style={styles.container}>
         <Text>Filter</Text>
       </View>
+      <Button title="Apply" onPress={() => {}} btnStyle={{marginHorizontal: 18, marginBottom: ifIphoneX(12, 24)}}/>
     </SafeAreaView>
   );
 };

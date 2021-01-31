@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet, SafeAreaView, TextInput, TouchableOpacity} from 'react-native';
 
-import { GRAY_LIGHT } from '../../constants/styles';
+import { GRAY_LIGHT, WHITE } from '../../constants/styles';
 import Button from '../../components/ui/Button/index'
 
 const SignUp = ({navigation}) => {
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1,  backgroundColor: WHITE}}>
       <View style={styles.main}>
         <View style={styles.container}>
           <Text style={styles.titleText}>Welome Back!</Text>
@@ -28,7 +28,7 @@ const SignUp = ({navigation}) => {
         <View style={styles.bottomView}>
           <Text style={styles.bottomText}>Don’t have an account? </Text>
           <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
-            <Text style={[styles.bottomText, {textDecorationLine: 'underline'}]}>Sign In</Text>
+            <Text style={[styles.bottomText, {textDecorationLine: 'underline',fontWeight: '500'}]}>Sign In</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 0,
     backgroundColor: GRAY_LIGHT,
     // fontFamily: 'Nunito-Regular',
-    height: 50,
     borderRadius: 10,
     padding: 14,
     fontSize: 16,
@@ -63,6 +62,7 @@ const styles = StyleSheet.create({
 
   bottomView: {
     flexDirection: 'row',
+    justifyContent: 'center',
     marginBottom: 28,
     marginHorizontal: 60,
   },

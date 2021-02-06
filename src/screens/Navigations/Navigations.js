@@ -1,9 +1,10 @@
 // @ts-nocheck
 import React, {useState} from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { ifIphoneX } from 'react-native-iphone-x-helper'
 
 import SignIn from '../Login/SignIn';
 import SignUp from '../Login/SignUp';
@@ -11,15 +12,17 @@ import Home from '../Home/Home';
 import User from '../User/User';
 import MapList from '../Home/MapList';
 import Filter from '../Home/Filter';
-import {GRAY_LIGHT} from '../../constants/styles';
-import FilterIcon from '../../resources/svg/filter_icon.svg';
-import BackArrowIcon from '../../resources/svg/left_black_arrow_icon.svg';
+import SelectedHomeIcon from '../../resources/svg/selected_home_icon.svg';
+import HomeIcon from '../../resources/svg/home_icon.svg';
+import SelectedUserIcon from '../../resources/svg/selected_user_icon.svg';
+import UserIcon from '../../resources/svg/user_icon.svg'
 
 const SignInSignUpStack = createStackNavigator();
 const TabStack = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
 const FilterStack = createStackNavigator();
-const SwitchStack = createStackNavigator()
+const SwitchStack = createStackNavigator();
+
 
 
 const SignInSignUpScreen = () => {
@@ -27,8 +30,8 @@ const SignInSignUpScreen = () => {
     <SignInSignUpStack.Navigator screenOptions={{headerShown: false}}>
       <SignInSignUpStack.Screen name="SignIn" component={SignIn} />
       <SignInSignUpStack.Screen name="SignUp" component={SignUp} />
-      <SignInSignUpStack.Screen name="Home" component={TabScreen} />
-      <SignInSignUpStack.Screen name="Filter" component={FilterScreen} />
+      <SignInSignUpStack.Screen name="Home" component={TabScreen} options={{gestureEnabled: false}}/>
+      <SignInSignUpStack.Screen name="Filter" component={FilterScreen} options={{gestureEnabled: false}}/>
     </SignInSignUpStack.Navigator>
   );
 };
@@ -42,7 +45,7 @@ const HomeScreens = () => {
         options={{
           headerTitle: null,
         }}
-      /> 
+      />
 
       <HomeStack.Screen
         name="MapList"
@@ -58,19 +61,46 @@ const HomeScreens = () => {
 const FilterScreen = () => {
   return (
     <FilterStack.Navigator screenOptions={{headerShown: false}}>
-    <FilterStack.Screen name="Filter" component={Filter} options={{
+      <FilterStack.Screen
+        name="Filter"
+        component={Filter}
+        options={{
           headerTitle: null,
-        }}/>
-  </FilterStack.Navigator>
-  )
-  
-}
+        }}
+      />
+    </FilterStack.Navigator>
+  );
+};
 
 const TabScreen = () => {
   return (
-    <TabStack.Navigator>
-      <TabStack.Screen name="Home" component={HomeScreens} />
-      <TabStack.Screen name="User" component={User} />
+    <TabStack.Navigator >
+      <TabStack.Screen
+        name="Home"
+        component={HomeScreens}
+        options={{
+          tabBarLabel: ({focused}) => {
+            return (
+            <View style={{position: 'absolute', bottom: ifIphoneX(-2, 4)}}>
+            {focused ? <SelectedHomeIcon width={40} height={40}/> : <HomeIcon width={40} height={40}/>}
+            </View>
+            );
+          },
+        }}
+      />
+      <TabStack.Screen
+        name="User"
+        component={User}
+        options={{
+          tabBarLabel: ({focused}) => {
+            return (
+            <View style={{position: 'absolute', bottom: ifIphoneX(-2, 6)}}>
+            {focused ? <SelectedUserIcon width={36} height={36}/> : <UserIcon width={36} height={36}/>}
+            </View>
+            );
+          },
+        }}
+      />
     </TabStack.Navigator>
   );
 };

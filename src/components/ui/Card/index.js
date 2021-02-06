@@ -18,7 +18,7 @@ const index = ({containerStyle, bottomContent}) => {
             borderBottomStartRadius: 8,
             borderBottomEndRadius: 8,
             backgroundColor: WHITE,
-            borderWidth: 1,
+            // borderWidth: 1,
           }}>
           <Text>Bottom</Text>
         </View>

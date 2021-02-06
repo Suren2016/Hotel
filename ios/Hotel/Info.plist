@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Required Your place</string>
 	<key>CFBundleDisplayName</key>
 	<string>Hotel</string>
 	<key>CFBundleExecutable</key>

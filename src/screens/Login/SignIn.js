@@ -13,14 +13,12 @@ import Button from '../../components/ui/Button';
 
 import {
   GRAY_LIGHT,
-  GRADIENT_DARK,
-  GRADIENT_MIDDLE,
   WHITE,
 } from '../../constants/styles';
 
 const SignIn = ({navigation}) => {
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: WHITE}}>
       <View style={styles.main}>
         <View style={styles.container}>
           <Text style={styles.titleText}>Welome Back!</Text>
@@ -36,7 +34,7 @@ const SignIn = ({navigation}) => {
         <View style={styles.bottomView}>
           <Text style={styles.bottomText}>Don’t have an account? </Text>
           <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-            <Text style={[styles.bottomText, {textDecorationLine: 'underline'}]}>Sign Up</Text>
+            <Text style={[styles.bottomText, {textDecorationLine: 'underline',fontWeight: '500'}]}>Sign Up</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -63,7 +61,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 0,
     backgroundColor: GRAY_LIGHT,
     // fontFamily: 'Nunito-Regular',
-    height: 50,
     borderRadius: 10,
     padding: 14,
     fontSize: 16,
@@ -71,12 +68,13 @@ const styles = StyleSheet.create({
 
   bottomView: {
     flexDirection: 'row',
+    justifyContent: 'center',
     marginBottom: 28,
     marginHorizontal: 60,
   },
   bottomText: {
     fontSize: 16,
-    marginRight: 10
+    marginRight: 10,
   }
 });
 

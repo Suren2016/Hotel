@@ -6,3 +6,4 @@ export const GRADIENT_LIGHT = '#C06C84';
 export const GRADIENT_MIDDLE = '#6C5B7B';
 export const BLACK_TEXT = '#393939';
 export const SHADOW = '#FEF2EB'
+export const RED_SHADOW = '#C06C84'

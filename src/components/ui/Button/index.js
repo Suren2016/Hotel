@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import PropTypes from 'prop-types'
 
 import styles from './styles'
-import {GRADIENT_DARK, GRADIENT_MIDDLE, GRAY_LIGHT} from '../../../constants/styles'
+import {GRADIENT_DARK, GRADIENT_MIDDLE, RED_SHADOW} from '../../../constants/styles'
 
 
 const index = ({title, onPress, btnStyle}) => {
@@ -12,7 +12,7 @@ const index = ({title, onPress, btnStyle}) => {
     <TouchableOpacity style={[styles.signInTouch, {...btnStyle}]} activeOpacity={0.6} onPress={onPress}>
       <LinearGradient
         style={styles.gradient}
-        colors={[GRADIENT_DARK, GRADIENT_MIDDLE, GRAY_LIGHT]}
+        colors={[GRADIENT_DARK, GRADIENT_MIDDLE, RED_SHADOW]}
         start={{x: 0, y: 0}}
         end={{x: 1, y: 0}}>
         <Text style={styles.signInText}>{title}</Text>

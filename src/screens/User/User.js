@@ -1,10 +1,12 @@
-import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, Linking} from 'react-native';
 
 import {GRAY_LIGHT} from '../../constants/styles';
 
 const User = ({navigation}) => {
+  const handleURL = (url) => {
+    Linking.openURL(url)
+  }
   return (
     <View style={styles.container}>
       <View
@@ -19,14 +21,14 @@ const User = ({navigation}) => {
           Suren Abrahamyan
         </Text>
       </View>
-      <View style={{marginHorizontal: 26, marginTop: 40, borderWidth: 1}}>
-        <TouchableOpacity>
+      <View style={{marginHorizontal: 26, marginTop: 40, borderWidth: 1, alignSelf: 'stretch'}}>
+        <TouchableOpacity onPress={() => handleURL("https://google.ru")}>
           <Text style={styles.textBottomSpace}>Help</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handleURL("https://hotels.com")}>
           <Text style={styles.textBottomSpace}>Term of use</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handleURL("https://hotels.com")}>
           <Text style={styles.textBottomSpace}>Privacy Policy</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.popToTop()}>

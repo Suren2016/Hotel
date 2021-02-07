@@ -6,6 +6,7 @@ import {
   StyleSheet,
   SafeAreaView,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
@@ -18,6 +19,7 @@ import {
   GRADIENT_MIDDLE,
   RED_SHADOW,
 } from '../../constants/styles';
+import { ifIphoneX } from 'react-native-iphone-x-helper';
 
 // API key  =   AIzaSyDb5azMde22cgt1lXWHylymS2NLj5ToUzM
 
@@ -122,7 +124,7 @@ const styles = StyleSheet.create({
   map: {
     ...StyleSheet.absoluteFillObject,
     // flex: 1,
-    top: 100,
+    top: Platform.OS === 'ios' ? ifIphoneX(100, 72) : 54,
     backgroundColor: 'transparent',
   },
   card: {

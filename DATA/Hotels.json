@@ -1,0 +1,317 @@
+[
+  {
+    "name": "Krabi Poonsiri Pool villa",
+    "id": 1,
+    "place": "Krabi Poonsiri Pool villa, Ao Nang, Muang Krabi, Krabi, Tajlandia",
+    "imagURL": "https://images.unsplash.com/photo-1587242778887-79dacd896635?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2167&q=80",
+    "coordinate": {
+      "lat": 8.037220,
+      "lng": 98.833183
+    },
+    "isAvailable": false,
+    "rating": 5,
+    "price": 800,
+    "isIncludedBreakfest": false,
+    "hasPrePeyment": true
+  },
+  {
+    "name": "The Anam",
+    "id": 2,
+    "place": "The Anam, Nguyễn Tất Thành, Cam Hải Đông, Cam Lâm, Khánh Hòa, Việt Nam",
+    "imagURL": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80",
+    "coordinate": {
+      "lat": 12.1003902,
+      "lng": 109.1920896
+    },
+    "isAvailable": true,
+    "rating": 4,
+    "price": 180,
+    "isIncludedBreakfest": false,
+    "hasPrePeyment": false
+  },
+  {
+    "name": "Sunny Beach",
+    "id": 3,
+    "place": "Sunny Beach, Bulgaria",
+    "imagURL": "https://images.unsplash.com/photo-1560200353-ce0a76b1d438?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80",
+    "coordinate": {
+      "lat": 42.6883305,
+      "lng": 27.7139182
+    },
+    "isAvailable": true,
+    "rating": 3,
+    "price": 230,
+    "isIncludedBreakfest": false,
+    "hasPrePeyment": false
+  },
+  {
+    "name": "Notia Rodos",
+    "id": 4,
+    "place": "Pros Gennadio, Notia Rodos, Griekenland",
+    "imagURL": "https://images.unsplash.com/photo-1588932588492-fbd4e798bbcb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2167&q=80",
+    "coordinate": {
+      "lat": 36.0111443,
+      "lng": 27.9172699
+    },
+    "isAvailable": true,
+    "rating": 2,
+    "price": 35,
+    "isIncludedBreakfest": false,
+    "hasPrePeyment": false
+  },
+  {
+    "name": "Hotel Tulum",
+    "id": 5,
+    "place": "Tulum, Mexico",
+    "imagURL": "https://images.unsplash.com/photo-1548623832-065a018e01ce?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2217&q=80",
+    "coordinate": {
+      "lat": 20.1995182,
+      "lng": -87.4765623
+    },
+    "isAvailable": false,
+    "rating": 5,
+    "price": 800,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": false
+  },
+  {
+    "name": "Quintana Roo, Mexico",
+    "id": 6,
+    "place": "Quintana Roo, Mexico",
+    "imagURL": "https://images.unsplash.com/photo-1605148517575-3cc146936f38?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2689&q=80",
+    "coordinate": {
+      "lat": 19.1817393, 
+      "lng": -88.4791376
+    },
+    "isAvailable": true,
+    "rating": 5,
+    "price": 700,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": true
+  },
+  {
+    "name": "Cauayan Island Resort",
+    "id": 7,
+    "place": "Cauayan Island Resort, El Nido, Palawan, Philippines",
+    "imagURL": "https://images.unsplash.com/photo-1605538032404-d7f061325b90?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80",
+    "coordinate": {
+      "lat": 11.2613187,
+      "lng": 119.3530117
+    },
+    "isAvailable": true,
+    "rating": 5,
+    "price": 350.0,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": false
+  },
+  {
+    "name": "84050 Giungano, SA, Italien",
+    "id": 8,
+    "place": "84050 Giungano, SA, Italien",
+    "imagURL": "https://images.unsplash.com/photo-1599824523445-75623fbd0f2c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80",
+    "coordinate": {
+      "lat": 40.394169,
+      "lng": 15.107908
+    },
+    "isAvailable": true,
+    "rating": 5,
+    "price": 400,
+    "isIncludedBreakfest": false,
+    "hasPrePeyment": true
+  },
+  {
+    "name": "Phuket, Таиланд",
+    "id": 9,
+    "place": "Phuket, Таиланд",
+    "imagURL": "https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2168&q=80",
+    "coordinate": {
+      "lat": 7.9569238,
+      "lng": 98.283096
+    },
+    "isAvailable": true,
+    "rating": 4,
+    "price": 350,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": false
+  },
+  {
+    "name": "Kihavah Huravalhi Island Baa Atoll",
+    "id": 10,
+    "place": "Kihavah Huravalhi Island Baa Atoll, Maldives",
+    "imagURL": "https://images.unsplash.com/photo-1540202404-a2f29016b523?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2690&q=80",
+    "coordinate": {
+      "lat": 5.2963016,
+      "lng": 73.0571301
+    },
+    "isAvailable": true,
+    "rating": 3,
+    "price": 75,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": false
+  },
+  {
+    "name": "Medhufushi Island Resort",
+    "id": 11,
+    "place": "Medhufushi Island Resort, Maldives",
+    "imagURL": "https://images.unsplash.com/photo-1516815231560-8f41ec531527?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2247&q=80",
+    "coordinate": {
+      "lat": 2.8823513,
+      "lng": 73.5744095
+    },
+    "isAvailable": true,
+    "rating": 3,
+    "price": 95,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": true
+  },
+  {
+    "name": " Soho Beach House, Miami Beach",
+    "id": 12,
+    "place": " Soho Beach House, Miami Beach, United States",
+    "imagURL": "https://images.unsplash.com/photo-1506812574058-fc75fa93fead?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80",
+    "coordinate": {
+      "lat": 25.8160016,
+      "lng": -80.1219901
+    },
+    "isAvailable": true,
+    "rating": 5,
+    "price": 650,
+    "isIncludedBreakfest": false,
+    "hasPrePeyment": false
+  },
+  {
+    "name": "Regatta SPA Hotel",
+    "id": 13,
+    "place": "Regatta SPA Hotel, Torikatu, Hanko, Finlandia",
+    "imagURL": "https://images.unsplash.com/photo-1606995797360-c446110d0344?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80 ",
+    "coordinate": {
+      "lat": 59.8219217,
+      "lng": 22.9694252
+    },
+    "isAvailable": false,
+    "rating": 4,
+    "price": 200,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": true
+  },
+  {
+    "name": "Jumeirah Beach Hotel",
+    "id": 14,
+    "place": "Jumeirah Beach Hotel - Jumeirah Street - Dubai - United Arab Emirates",
+    "imagURL": "https://images.unsplash.com/photo-1584370423701-92e8f6982f80?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80",
+    "coordinate": {
+      "lat": 25.1415843,
+      "lng": 55.1912777
+    },
+    "isAvailable": false,
+    "rating": 3,
+    "price": 292,
+    "isIncludedBreakfest": false,
+    "hasPrePeyment": false
+  },
+  {
+    "name": "Malahini Kuda Bandos",
+    "id": 15,
+    "place": "Malahini Kuda Bandos, Maldives",
+    "imagURL": "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80",
+    "coordinate": {
+      "lat": 4.26409,
+      "lng": 73.500011
+    },
+    "isAvailable": true,
+    "rating": 4,
+    "price": 101,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": true
+  },
+  {
+    "name": "Secrets Resort",
+    "id": 16,
+    "place": "Secrets Resort - Playa Mujeres, Mexico",
+    "imagURL": "https://images.unsplash.com/photo-1551286923-c82d6a8ae079?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2249&q=80",
+    "coordinate": {
+      "lat": 21.2641108,
+      "lng": -86.8167769
+    },
+    "isAvailable": true,
+    "rating": 4,
+    "price": 249,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": true
+  },
+  {
+    "name": "Kauai",
+    "id": 17,
+    "place": "Kauai, United States",
+    "imagURL": "https://images.unsplash.com/photo-1531003300514-1976481c521e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80",
+    "coordinate": {
+      "lat": 22.166746,
+      "lng": -159.639244
+    },
+    "isAvailable": false,
+    "rating": 5,
+    "price": 550,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": false
+  },
+  {
+    "name": "Blvd. Paseo De La Marina 18, Cabo San Lucas",
+    "id": 18,
+    "place": "Blvd. Paseo De La Marina 18, IGY Marina Dock E, Centro, 23450 Cabo San Lucas, B.C.S., Mexico, Cabo San Lucas",
+    "imagURL": "https://images.unsplash.com/photo-1541480551145-2370a440d585?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2249&q=80",
+    "coordinate": {
+      "lat": 22.8858667,
+      "lng": -109.9120174
+    },
+    "isAvailable": true,
+    "rating": 3,
+    "price": 150,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": false
+  },
+  {
+    "name": "Guardamar del Segura, Spain",
+    "id": 19,
+    "place": "Guardamar del Segura, Spain",
+    "imagURL": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80",
+    "coordinate": {
+      "lat": 38.0880841,
+      "lng": -0.6503351
+    },
+    "isAvailable": true,
+    "rating": 4,
+    "price": 59,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": true
+  },
+  {
+    "name": "Forest City Phoenix Hotel",
+    "id": 20,
+    "place": "Forest City Phoenix Hotel, Gelang Patah, Johor, Malaysia",
+    "imagURL": "https://images.unsplash.com/photo-1595434818649-81ee78242024?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80",
+    "coordinate": {
+      "lat": 1.335991,
+      "lng": 103.5939925
+    },
+    "isAvailable": false,
+    "rating": 4,
+    "price": 300,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": false
+  },
+  {
+    "name": "Ao Nang",
+    "id": 21,
+    "place": "Ao Nang, Thailand",
+    "imagURL": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80",
+    "coordinate": {
+      "lat": 8.037220,
+      "lng": 98.833183
+    },
+    "isAvailable": false,
+    "rating": 4,
+    "price": 420,
+    "isIncludedBreakfest": true,
+    "hasPrePeyment": true
+  }
+]

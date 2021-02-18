@@ -4,14 +4,10 @@ import {SHADOW} from '../../../constants/styles';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-backgroundColor: SHADOW,
-    borderRadius: 8,
-    borderWidth: 1
+    justifyContent: 'flex-end',
+    resizeMode: "cover",
+    
   },
-  // card: {
-    
-    
-  // },
 });
 
 export default styles;

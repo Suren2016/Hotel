@@ -23,6 +23,7 @@ import { ifIphoneX } from 'react-native-iphone-x-helper';
 
 // API key  =   AIzaSyDb5azMde22cgt1lXWHylymS2NLj5ToUzM
 
+
 const CustomMarker = ({title}) => {
   return (
     <TouchableOpacity>
@@ -65,6 +66,7 @@ const MapList = ({navigation}) => {
       <MapView
         provider={PROVIDER_GOOGLE} // remove if not using Google Maps
         style={styles.map}
+        customMapStyle={require('../../../DATA/map.json')}
         region={{
           latitude: 37.78825,
           longitude: -122.4324,

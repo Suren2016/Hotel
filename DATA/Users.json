@@ -1,0 +1,11 @@
+[
+  {
+    "name": "SSS",
+    "lastName": "AAA",
+    "id": 12345,
+    "balance": 1500,
+    "userName": "user",
+    "password": "pass",
+    "phone": "000-555-77-99"
+  }
+]

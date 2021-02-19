@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, {useState, useEffect, Fragment} from 'react';
-import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, SafeAreaView, ScrollView, ActivityIndicator} from 'react-native';
 
 import HeaderView from '../../components/ui/HeaderView/index';
 // @ts-ignore
@@ -11,13 +11,20 @@ import Card from '../../components/ui/Card/index';
 // @ts-ignore
 import hotels from '../../../DATA/Hotels.json';
 
+
 const Home = ({navigation}) => {
   const [data, setData] = useState([]);
+  const [featured, setFeatured] = useState([])
+
+  console.log("data - ", data);
+  console.log("featured - ", featured);
 
   useEffect(() => {
     try {
       if (hotels) {
       setData(hotels);
+      const featuredData = hotels.filter(item => item.hasPrePeyment)
+      setFeatured(featuredData)
     }
     } catch (e) {
       console.log('error - ', e);
@@ -28,8 +35,8 @@ const Home = ({navigation}) => {
   const renderHorizontalCard = () => {
     return (
       <>
-        {data.map((item, i) => (
-          <Fragment key={i}>
+        {featured.map((item, i) => (
+            <Fragment key={i}>
             <Card
               containerStyle={styles.horizontalCard}
               text={item.name}
@@ -40,7 +47,7 @@ const Home = ({navigation}) => {
               image={item.imagURL}
               textStyle={{fontSize: 16, fontWeight: '700'}}
             />
-          </Fragment>
+            </Fragment>
         ))}
       </>
     );
@@ -59,6 +66,7 @@ const Home = ({navigation}) => {
               textStyle={{fontSize: 22, fontWeight: '700'}}
               imageStyle={{borderTopLeftRadius: 8, borderTopRightRadius: 8}}
               price={item.price}
+              prePayment={item.hasPrePeyment ? 'Has prepayment' : 'No prepeyment'}
             />
           </Fragment>
         ))}

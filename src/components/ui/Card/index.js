@@ -14,10 +14,11 @@ const Card = ({
   key,
   textStyle,
   price,
-  prePayment
+  prePayment,
+  onPress
 }) => {
   return (
-    <TouchableOpacity style={mainStyle} activeOpacity={0.6} key={key}>
+    <TouchableOpacity style={mainStyle} activeOpacity={0.6} key={key} onPress={onPress}>
       <ImageBackground
         style={[styles.container, containerStyle]}
         source={{uri: image}}

@@ -83,6 +83,13 @@ const Filter = ({navigation}) => {
             // </LinearGradient>
             ios_backgroundColor={SWITCH_OFF}
             trackColor={{false: SWITCH_OFF, true: RED_SHADOW}}
+            onTintColor={() => (
+              <LinearGradient
+              colors={[GRADIENT_DARK, GRADIENT_MIDDLE, RED_SHADOW]}
+              start={{x: 0, y: 0}}
+              end={{x: 1, y: 0}}>
+            </LinearGradient>
+            )}
           />
         </View>
         <View style={[styles.container, {marginTop: 34}]}>

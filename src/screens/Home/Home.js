@@ -51,7 +51,7 @@ const Home = ({navigation}) => {
                 width: 200,
                 height: 120,
               }}
-              image={item.imagURL}
+              image={item.imagURL[0]}
               textStyle={{fontSize: 16, fontWeight: '700'}}
               onPress={() => {
                 console.log('image - ', item.id);
@@ -76,7 +76,7 @@ const Home = ({navigation}) => {
               containerStyle={[styles.verticalCard, {height: 185}]}
               bottomContent={true}
               text={item.name}
-              image={item.imagURL}
+              image={item.imagURL[0]}
               textStyle={{fontSize: 22, fontWeight: '700'}}
               imageStyle={{borderTopLeftRadius: 8, borderTopRightRadius: 8}}
               price={item.price}

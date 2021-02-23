@@ -8,6 +8,8 @@ import {
   View,
   Text,
   ScrollView,
+  Modal,
+  Dimensions,
 } from 'react-native';
 // import HeaderView from '../../../components/ui/HeaderView/index';
 // @ts-ignore
@@ -29,10 +31,18 @@ import {
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 import LinearGradient from 'react-native-linear-gradient';
 import CustomMarker from '../../../components/ui/CustomMarker';
+// @ts-ignore
+import hotels from '../../../../DATA/Hotels.json';
 
 const Hotel = ({route, navigation}) => {
   // const [id, setId] = useState();
+  const [getHeight, setHeight] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const {width, height} = Dimensions.get('screen');
+
   const id = route?.params?.id;
+  const data = hotels;
+  const images = data.find((item) => item === 'imageURL');
   // const id = navigation?.state?.params?.id;
 
   // useEffect(() => {
@@ -43,18 +53,21 @@ const Hotel = ({route, navigation}) => {
   //   }
   // }, []);
   console.log('id - ', id); // height: '31%'
+  console.log('width - ', width);
+  console.log('height - ', height);
 
   return (
     <>
-      <TouchableOpacity style={{flexDirection: 'row', height: '34%'}}>
+      <TouchableOpacity
+        style={{flexDirection: 'row', height: '34%'}}
+        activeOpacity={0.2}
+        onPress={() => setIsVisible(true)}>
         <ImageBackground
           source={{
             uri:
               'https://images.unsplash.com/photo-1587242778887-79dacd896635?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2167&q=80',
           }}
-          style={{flex: 1}}
-          // imageStyle={{}}
-        >
+          style={{flex: 1}}>
           <TouchableOpacity
             style={{
               width: '10%',
@@ -68,8 +81,14 @@ const Hotel = ({route, navigation}) => {
         </ImageBackground>
       </TouchableOpacity>
 
-      <View style={{height: '12%', flexDirection: 'row'}}>
-        <TouchableOpacity style={{flex: 1, width: '33.33%'}}>
+      <View
+        style={{height: '12%', flexDirection: 'row'}}
+        onLayout={(e) => {
+          setHeight(e.nativeEvent.layout.height);
+        }}>
+        <TouchableOpacity
+          style={{flex: 1, width: '33.33%'}}
+          activeOpacity={0.2}>
           <ImageBackground
             source={{
               uri:
@@ -78,7 +97,9 @@ const Hotel = ({route, navigation}) => {
             style={{flex: 1}}></ImageBackground>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{flex: 1, width: '33.33%'}}>
+        <TouchableOpacity
+          style={{flex: 1, width: '33.33%'}}
+          activeOpacity={0.2}>
           <ImageBackground
             source={{
               uri:
@@ -87,7 +108,9 @@ const Hotel = ({route, navigation}) => {
             style={{flex: 1}}></ImageBackground>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{flex: 1, width: '33.33%'}}>
+        <TouchableOpacity
+          style={{flex: 1, width: '33.33%'}}
+          activeOpacity={0.2}>
           <ImageBackground
             source={{
               uri:
@@ -97,12 +120,13 @@ const Hotel = ({route, navigation}) => {
             <Text
               style={{
                 position: 'absolute',
-                top: 12,
-                left: 30,
+                top: getHeight / 2.8,
+                alignSelf: 'center',
+                textAlign: 'center',
                 fontSize: 18,
                 fontWeight: '600',
                 color: WHITE,
-                zIndex: 100,
+                // zIndex: 100,
               }}>
               + 21
             </Text>
@@ -173,6 +197,34 @@ const Hotel = ({route, navigation}) => {
           </Text>
         </View>
       </ScrollView>
+      <Modal
+        visible={isVisible}
+        transparent={true}
+        presentationStyle="overFullScreen"
+        animationType="fade">
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: 'rgba(44,44,44,0.7)',
+          }}>
+          <View
+            style={{
+              height: 200,
+              width: 200,
+              backgroundColor: 'white',
+              opacity: 1,
+            }}>
+            <TouchableOpacity
+              onPress={() => setIsVisible(false)}
+              style={{padding: 10}}>
+              <Text>X</Text>
+            </TouchableOpacity>
+            <Text>Modal</Text>
+          </View>
+        </View>
+      </Modal>
     </>
   );
 };

@@ -12,6 +12,9 @@ import Home from '../Home/Home';
 import User from '../User/User';
 import MapList from '../Home/MapList';
 import Filter from '../Home/Filter';
+import Hotel from '../Home/Hotel/Hotel';
+import HotelGallery from '../Home/Hotel/HotelGallery'
+
 import SelectedHomeIcon from '../../resources/svg/selected_home_icon.svg';
 import HomeIcon from '../../resources/svg/home_icon.svg';
 import SelectedUserIcon from '../../resources/svg/selected_user_icon.svg';
@@ -21,7 +24,7 @@ const SignInSignUpStack = createStackNavigator();
 const TabStack = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
 const FilterStack = createStackNavigator();
-const SwitchStack = createStackNavigator();
+const GallerylStack = createStackNavigator();
 
 
 
@@ -36,24 +39,21 @@ const SignInSignUpScreen = () => {
   );
 };
 
+const GallerylStackScreens = () => {
+  return (
+    <GallerylStack.Navigator screenOptions={{headerShown: false}}>
+      <GallerylStack.Screen name="Hotel" component={Hotel} options={{headerTitle: null}}/>
+      <GallerylStack.Screen name="HotelGallery" component={HotelGallery} options={{headerTitle: null}}/>
+    </GallerylStack.Navigator>
+  )
+}
+
 const HomeScreens = () => {
   return (
     <HomeStack.Navigator screenOptions={{headerShown: false}}>
-      <HomeStack.Screen
-        name="Home"
-        component={Home}
-        options={{
-          headerTitle: null,
-        }}
-      />
-
-      <HomeStack.Screen
-        name="MapList"
-        component={MapList}
-        options={{
-          headerTitle: null,
-        }}
-      />
+      <HomeStack.Screen name="Home" component={Home} options={{headerTitle: null}}/>
+      <HomeStack.Screen name="MapList" component={MapList} options={{headerTitle: null}}/>
+      <HomeStack.Screen name="Hotel" component={GallerylStackScreens}/>
     </HomeStack.Navigator>
   );
 };

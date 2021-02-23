@@ -1,10 +1,19 @@
 // @ts-nocheck
 import React, {useState, useEffect, Fragment} from 'react';
-import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+  // @ts-ignore
+  ActivityIndicator,
+} from 'react-native';
 
 import HeaderView from '../../components/ui/HeaderView/index';
 // @ts-ignore
 import FilterIcon from '../../resources/svg/filter_icon.svg';
+// @ts-ignore
 import {GRAY_LIGHT, WHITE} from '../../constants/styles';
 import Card from '../../components/ui/Card/index';
 
@@ -13,22 +22,27 @@ import hotels from '../../../DATA/Hotels.json';
 
 const Home = ({navigation}) => {
   const [data, setData] = useState([]);
+  const [featured, setFeatured] = useState([]);
+
+  // console.log("data - ", data);
+  // console.log("featured - ", featured);
 
   useEffect(() => {
     try {
       if (hotels) {
-      setData(hotels);
-    }
+        setData(hotels);
+        const featuredData = hotels.filter((item) => item.hasPrePeyment);
+        setFeatured(featuredData);
+      }
     } catch (e) {
       console.log('error - ', e);
     }
-    
   }, []);
 
   const renderHorizontalCard = () => {
     return (
       <>
-        {data.map((item, i) => (
+        {featured.map((item, i) => (
           <Fragment key={i}>
             <Card
               containerStyle={styles.horizontalCard}
@@ -39,6 +53,13 @@ const Home = ({navigation}) => {
               }}
               image={item.imagURL}
               textStyle={{fontSize: 16, fontWeight: '700'}}
+              onPress={() => {
+                console.log('image - ', item.id);
+                navigation.navigate('Hotel', {
+                  id: item.id,
+                  image: item.imagURL,
+                });
+              }}
             />
           </Fragment>
         ))}
@@ -59,13 +80,22 @@ const Home = ({navigation}) => {
               textStyle={{fontSize: 22, fontWeight: '700'}}
               imageStyle={{borderTopLeftRadius: 8, borderTopRightRadius: 8}}
               price={item.price}
+              prePayment={
+                item.hasPrePeyment ? 'Has prepayment' : 'No prepeyment'
+              }
+              onPress={() => {
+                console.log('imageURL - ', item.imagURL);
+                // @ts-ignore
+                navigation.navigate('Hotel', {
+                  id: '45',
+                });
+              }}
             />
           </Fragment>
         ))}
       </>
     );
   };
-  
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>

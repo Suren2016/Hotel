@@ -4,7 +4,7 @@ import styles from './styles';
 import {GRAY_LIGHT, PLACEHOLDER_GRAY, WHITE} from '../../../constants/styles';
 import PropTypes from 'prop-types';
 
-const index = ({
+const Card = ({
   containerStyle,
   bottomContent,
   text,
@@ -13,10 +13,12 @@ const index = ({
   imageStyle,
   key,
   textStyle,
-  price
+  price,
+  prePayment,
+  onPress
 }) => {
   return (
-    <TouchableOpacity style={mainStyle} activeOpacity={0.6} key={key}>
+    <TouchableOpacity style={mainStyle} activeOpacity={0.6} key={key} onPress={onPress}>
       <ImageBackground
         style={[styles.container, containerStyle]}
         source={{uri: image}}
@@ -51,7 +53,7 @@ const index = ({
           <View style={{flexDirection: 'row', justifyContent: 'space-between', flex: 1}}>
             <View style={{marginLeft: 15, marginTop: 4, flex: 2}}>
               <Text style={{fontSize: 14, fontWeight: '600', marginRight: 16 }}>Ocean View 1 king Beg Bed</Text>
-              <Text style={{fontSize: 14, fontWeight: '600'}}>No prepayment</Text>
+              <Text style={{fontSize: 14, fontWeight: '600'}}>{prePayment}</Text>
             </View>
             {price && <Text style={{marginRight: 16, marginTop: 20, textAlign: 'right', fontSize: 24, fontWeight: '800', }}>{`$ ${price}`}</Text>}
           </View>
@@ -61,9 +63,9 @@ const index = ({
   );
 };
 
-index.prototype = {
+Card.prototype = {
   containerStyle: PropTypes.object,
   bottomContent: PropTypes.bool,
 };
 
-export default index;
+export default Card;

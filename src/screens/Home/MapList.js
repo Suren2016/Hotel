@@ -19,34 +19,10 @@ import {
   GRADIENT_MIDDLE,
   RED_SHADOW,
 } from '../../constants/styles';
-import { ifIphoneX } from 'react-native-iphone-x-helper';
+import {ifIphoneX} from 'react-native-iphone-x-helper';
+import CustomMarker from '../../components/ui/CustomMarker';
 
 // API key  =   AIzaSyDb5azMde22cgt1lXWHylymS2NLj5ToUzM
-
-
-const CustomMarker = ({title}) => {
-  return (
-    <TouchableOpacity>
-      <LinearGradient
-        style={{borderRadius: 40}}
-        colors={[GRADIENT_DARK, GRADIENT_MIDDLE, RED_SHADOW]}
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 0}}>
-        <Text
-          style={{
-            color: 'white',
-            marginHorizontal: 12,
-            marginVertical: 6,
-            fontWeight: '800',
-            fontSize: 17,
-            textAlign: 'center',
-          }}>
-          {title}
-        </Text>
-      </LinearGradient>
-    </TouchableOpacity>
-  );
-};
 
 const MapList = ({navigation}) => {
   return (
@@ -72,8 +48,7 @@ const MapList = ({navigation}) => {
           longitude: -122.4324,
           latitudeDelta: 0.015,
           longitudeDelta: 0.0121,
-        }}
-        mapType="terrain">
+        }}>
         <Marker
           coordinate={{
             latitude: 37.78825,

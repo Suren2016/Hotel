@@ -24,8 +24,6 @@ const index = ({
           justifyContent: 'space-between',
           alignItems: 'center',
           marginHorizontal: 18,
-          // height: 50,
-          // borderWidth: 1
           marginTop: 20
         },
         style,

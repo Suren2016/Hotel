@@ -8,13 +8,9 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import Button from '../../components/ui/Button';
 
-import {
-  GRAY_LIGHT,
-  WHITE,
-} from '../../constants/styles';
+import {GRAY_LIGHT, WHITE} from '../../constants/styles';
 
 const SignIn = ({navigation}) => {
   return (
@@ -28,13 +24,19 @@ const SignIn = ({navigation}) => {
             placeholder="Password"
             secureTextEntry
           />
-          <Button title='SIGN IN' onPress={() => navigation.navigate('Home')}/>
+          <Button title="SIGN IN" onPress={() => navigation.navigate('Home')} />
         </View>
 
         <View style={styles.bottomView}>
           <Text style={styles.bottomText}>Don’t have an account? </Text>
           <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-            <Text style={[styles.bottomText, {textDecorationLine: 'underline',fontWeight: '500'}]}>Sign Up</Text>
+            <Text
+              style={[
+                styles.bottomText,
+                {textDecorationLine: 'underline', fontWeight: '500'},
+              ]}>
+              Sign Up
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -75,7 +77,7 @@ const styles = StyleSheet.create({
   bottomText: {
     fontSize: 16,
     marginRight: 10,
-  }
+  },
 });
 
 export default React.memo(SignIn);

@@ -24,9 +24,6 @@ const Home = ({navigation}) => {
   const [data, setData] = useState([]);
   const [featured, setFeatured] = useState([]);
 
-  // console.log("data - ", data);
-  // console.log("featured - ", featured);
-
   useEffect(() => {
     try {
       if (hotels) {
@@ -129,7 +126,6 @@ const Home = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // marginHorizontal: 18,
     marginTop: 38,
     backgroundColor: GRAY_LIGHT,
   },
@@ -143,7 +139,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     marginHorizontal: 0,
     paddingHorizontal: 9,
-    // marginBottom: 10
   },
   horizontalCard: {
     overflow: 'scroll',

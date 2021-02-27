@@ -24,9 +24,6 @@ const Home = ({navigation}) => {
   const [data, setData] = useState([]);
   const [featured, setFeatured] = useState([]);
 
-  // console.log("data - ", data);
-  // console.log("featured - ", featured);
-
   useEffect(() => {
     try {
       if (hotels) {
@@ -51,7 +48,7 @@ const Home = ({navigation}) => {
                 width: 200,
                 height: 120,
               }}
-              image={item.imagURL}
+              image={item.imagURL[0]}
               textStyle={{fontSize: 16, fontWeight: '700'}}
               onPress={() => {
                 console.log('image - ', item.id);
@@ -76,7 +73,7 @@ const Home = ({navigation}) => {
               containerStyle={[styles.verticalCard, {height: 185}]}
               bottomContent={true}
               text={item.name}
-              image={item.imagURL}
+              image={item.imagURL[0]}
               textStyle={{fontSize: 22, fontWeight: '700'}}
               imageStyle={{borderTopLeftRadius: 8, borderTopRightRadius: 8}}
               price={item.price}
@@ -129,7 +126,6 @@ const Home = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // marginHorizontal: 18,
     marginTop: 38,
     backgroundColor: GRAY_LIGHT,
   },
@@ -143,7 +139,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     marginHorizontal: 0,
     paddingHorizontal: 9,
-    // marginBottom: 10
   },
   horizontalCard: {
     overflow: 'scroll',

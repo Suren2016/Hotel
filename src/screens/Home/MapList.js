@@ -1,24 +1,11 @@
 // @ts-nocheck
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  TouchableOpacity,
-  Platform,
-} from 'react-native';
+import {View, StyleSheet, SafeAreaView, Platform} from 'react-native';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
 import HeaderView from '../../components/ui/HeaderView/index';
 import FilterIcon from '../../resources/svg/filter_icon.svg';
 import Card from '../../components/ui/Card/index';
-import LinearGradient from 'react-native-linear-gradient';
-import {
-  GRADIENT_DARK,
-  GRADIENT_MIDDLE,
-  RED_SHADOW,
-} from '../../constants/styles';
 import {ifIphoneX} from 'react-native-iphone-x-helper';
 import CustomMarker from '../../components/ui/CustomMarker';
 

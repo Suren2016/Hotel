@@ -8,7 +8,7 @@ import {
   View,
   Text,
   ScrollView,
-  Modal,
+  StatusBar,
   Dimensions,
 } from 'react-native';
 // @ts-ignore
@@ -36,30 +36,48 @@ import ModalView from '../../../components/ui/ModalView';
 import LeftArrowIcon from '../../../resources/svg/left_arrow_icon.svg';
 // @ts-ignore
 import RightArrowIcon from '../../../resources/svg/right_arrow_icon.svg';
-// @ts-ignore
-import hotels from '../../../../DATA/Hotels.json';
 
-const Hotel = ({route, navigation}) => {
+const Hotel = ({navigation, route}) => {
   // const [id, setId] = useState();
   const [getHeight, setHeight] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [modalImage, setModalImage] = useState();
 
   const {width, height} = Dimensions.get('screen');
 
-  const id = route?.params?.id;
-  const data = hotels;
-  const images = data.find((item) => item === 'imageURL');
+  const item = route?.params?.item;
+
+  // const images = data.find((item) => item === 'imageURL');
+  console.log('item - ', item);
+
+  // /**
+  //  * @param {any} lat
+  //  * @param {any} lng
+  //  */
+  // const getPlaceName = async (lat, lng) => {
+  //   const url = `https://nominatim.openstreetmap.org/reverse?format=geojson&lat=${lat}&lon=${lng}`;
+  //   const res = await fetch(url);
+  //   // const json = await res.json();
+  //   console.log('res - ', res);
+  // };
+
+  const nextInage = (modalImage) => {
+    const images = item.imagURL;
+  };
 
   return (
     <>
+      <StatusBar barStyle="light-content" />
       <TouchableOpacity
         style={{flexDirection: 'row', height: '34%'}}
         activeOpacity={0.2}
-        onPress={() => setIsVisible(true)}>
+        onPress={() => {
+          setModalImage(item.imagURL[0]);
+          setIsVisible(true);
+        }}>
         <ImageBackground
           source={{
-            uri:
-              'https://images.unsplash.com/photo-1587242778887-79dacd896635?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2167&q=80',
+            uri: item.imagURL[0],
           }}
           style={{flex: 1}}>
           <TouchableOpacity
@@ -75,33 +93,48 @@ const Hotel = ({route, navigation}) => {
         onLayout={(e) => {
           setHeight(e.nativeEvent.layout.height);
         }}>
-        <TouchableOpacity style={styles.imageTouch} activeOpacity={0.2}>
+        <TouchableOpacity
+          style={styles.imageTouch}
+          activeOpacity={0.2}
+          onPress={() => {
+            setModalImage(item.imagURL[0]);
+            setIsVisible(true);
+          }}>
           <ImageBackground
             source={{
-              uri:
-                'https://images.unsplash.com/photo-1588932588492-fbd4e798bbcb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2167&q=80',
+              uri: item.imagURL[1],
             }}
             style={{flex: 1}}></ImageBackground>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.imageTouch} activeOpacity={0.2}>
+        <TouchableOpacity
+          style={styles.imageTouch}
+          activeOpacity={0.2}
+          onPress={() => {
+            setModalImage(item.imagURL[2]);
+            setIsVisible(true);
+          }}>
           <ImageBackground
             source={{
-              uri:
-                'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80',
+              uri: item.imagURL[2],
             }}
             style={{flex: 1}}></ImageBackground>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.imageTouch} activeOpacity={0.2}>
+        <TouchableOpacity
+          style={styles.imageTouch}
+          activeOpacity={0.2}
+          onPress={() => {
+            setModalImage(item.imagURL[3]);
+            setIsVisible(true);
+          }}>
           <ImageBackground
             source={{
-              uri:
-                'https://images.unsplash.com/photo-1560200353-ce0a76b1d438?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80',
+              uri: item.imagURL[3],
             }}
             style={{flex: 1}}>
             <Text style={[styles.plusNumber, {top: getHeight / 2.8}]}>
-              + 21
+              {`+ ${item.imagURL.length - 4}`}
             </Text>
           </ImageBackground>
         </TouchableOpacity>
@@ -109,7 +142,7 @@ const Hotel = ({route, navigation}) => {
       <ScrollView contentContainerStyle={styles.scrollView}>
         <View style={styles.hotelTitleContainer}>
           <Text style={styles.hotelTitle} numberOfLines={1}>
-            fgauyfgasdfaof sdf sdf sdf 111 1 11111
+            {item.name}
           </Text>
         </View>
         <View style={{height: 200}}>
@@ -119,17 +152,17 @@ const Hotel = ({route, navigation}) => {
             // @ts-ignore
             customMapStyle={require('../../../../DATA/map.json')}
             region={{
-              latitude: 37.78825,
-              longitude: -122.4324,
+              latitude: item.coordinate.lat,
+              longitude: item.coordinate.lng,
               latitudeDelta: 0.015,
               longitudeDelta: 0.0121,
             }}>
             <Marker
               coordinate={{
-                latitude: 37.78825,
-                longitude: -122.4324,
+                latitude: item.coordinate.lat,
+                longitude: item.coordinate.lng,
               }}>
-              <CustomMarker title="$ 350" />
+              <CustomMarker title={`$ ${item.price}`} />
             </Marker>
           </MapView>
         </View>
@@ -168,8 +201,7 @@ const Hotel = ({route, navigation}) => {
                 alignItems: 'center',
               }}
               source={{
-                uri:
-                  'https://images.unsplash.com/photo-1587242778887-79dacd896635?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2167&q=80',
+                uri: modalImage,
               }}>
               <TouchableOpacity style={styles.paddingSpace} onPress={() => {}}>
                 <LeftArrowIcon />

@@ -23,7 +23,7 @@ const SignInSignUpStack = createStackNavigator();
 const TabStack = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
 const FilterStack = createStackNavigator();
-const GallerylStack = createStackNavigator();
+// const GallerylStack = createStackNavigator();
 
 const SignInSignUpScreen = () => {
   return (
@@ -44,17 +44,22 @@ const SignInSignUpScreen = () => {
   );
 };
 
-const GallerylStackScreens = () => {
-  return (
-    <GallerylStack.Navigator screenOptions={{headerShown: false}}>
-      <GallerylStack.Screen
-        name="Hotel"
-        component={Hotel}
-        options={{headerTitle: null}}
-      />
-    </GallerylStack.Navigator>
-  );
-};
+// const GallerylStackScreens = () => {
+//   return (
+//     <GallerylStack.Navigator screenOptions={{headerShown: false}}>
+//       <GallerylStack.Screen
+//         name="Hotel"
+//         component={Hotel}
+//         options={{headerTitle: null}}
+//       />
+//       <GallerylStack.Screen
+//         name="Home"
+//         component={Home}
+//         options={{headerTitle: null}}
+//       />
+//     </GallerylStack.Navigator>
+//   );
+// };
 
 const HomeScreens = () => {
   return (
@@ -69,7 +74,11 @@ const HomeScreens = () => {
         component={MapList}
         options={{headerTitle: null}}
       />
-      <HomeStack.Screen name="Hotel" component={GallerylStackScreens} />
+      <HomeStack.Screen
+        name="Hotel"
+        component={Hotel}
+        options={{headerTitle: null}}
+      />
     </HomeStack.Navigator>
   );
 };

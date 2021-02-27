@@ -8,6 +8,7 @@ import {
   ScrollView,
   // @ts-ignore
   ActivityIndicator,
+  Button,
 } from 'react-native';
 
 import HeaderView from '../../components/ui/HeaderView/index';
@@ -51,10 +52,9 @@ const Home = ({navigation}) => {
               image={item.imagURL[0]}
               textStyle={{fontSize: 16, fontWeight: '700'}}
               onPress={() => {
-                console.log('image - ', item.id);
+                // console.log('image - ', item.id);
                 navigation.navigate('Hotel', {
-                  id: item.id,
-                  image: item.imagURL,
+                  item: item,
                 });
               }}
             />
@@ -81,10 +81,10 @@ const Home = ({navigation}) => {
                 item.hasPrePeyment ? 'Has prepayment' : 'No prepeyment'
               }
               onPress={() => {
-                console.log('imageURL - ', item.imagURL);
+                // console.log('imageURL - ', item.imagURL);
                 // @ts-ignore
                 navigation.navigate('Hotel', {
-                  id: '45',
+                  item: item,
                 });
               }}
             />

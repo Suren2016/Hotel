@@ -38,17 +38,11 @@ import LeftArrowIcon from '../../../resources/svg/left_arrow_icon.svg';
 import RightArrowIcon from '../../../resources/svg/right_arrow_icon.svg';
 
 const Hotel = ({navigation, route}) => {
-  // const [id, setId] = useState();
   const [getHeight, setHeight] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [modalImage, setModalImage] = useState();
 
-  const {width, height} = Dimensions.get('screen');
-
   const item = route?.params?.item;
-
-  // const images = data.find((item) => item === 'imageURL');
-  console.log('item - ', item);
 
   // /**
   //  * @param {any} lat
@@ -61,8 +55,24 @@ const Hotel = ({navigation, route}) => {
   //   console.log('res - ', res);
   // };
 
-  const nextInage = (modalImage) => {
+  const nextImage = (modalImage) => {
     const images = item.imagURL;
+    let index = images.indexOf(modalImage);
+    index += 1;
+    if (index === images.length) {
+      index = 0;
+    }
+    setModalImage(images[index]);
+  };
+
+  const previousImage = (modalImage) => {
+    const images = item.imagURL;
+    let index = images.indexOf(modalImage);
+    index -= 1;
+    if (index < 0) {
+      index = images.length - 1;
+    }
+    setModalImage(images[index]);
   };
 
   return (
@@ -97,7 +107,7 @@ const Hotel = ({navigation, route}) => {
           style={styles.imageTouch}
           activeOpacity={0.2}
           onPress={() => {
-            setModalImage(item.imagURL[0]);
+            setModalImage(item.imagURL[1]);
             setIsVisible(true);
           }}>
           <ImageBackground
@@ -194,19 +204,18 @@ const Hotel = ({navigation, route}) => {
         content={
           <View style={{flex: 1}}>
             <ImageBackground
-              style={{
-                flex: 1,
-                justifyContent: 'space-between',
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}
+              style={styles.modalImageTouch}
               source={{
                 uri: modalImage,
               }}>
-              <TouchableOpacity style={styles.paddingSpace} onPress={() => {}}>
+              <TouchableOpacity
+                style={styles.paddingSpace}
+                onPress={() => previousImage(modalImage)}>
                 <LeftArrowIcon />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.paddingSpace} onPress={() => {}}>
+              <TouchableOpacity
+                style={styles.paddingSpace}
+                onPress={() => nextImage(modalImage)}>
                 <RightArrowIcon />
               </TouchableOpacity>
             </ImageBackground>
@@ -289,6 +298,12 @@ const styles = StyleSheet.create({
   imageTouch: {
     flex: 1,
     width: '33.33%',
+  },
+  modalImageTouch: {
+    flex: 1,
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 

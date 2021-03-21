@@ -1,18 +1,1 @@
-[
-  {
-    "name": "SSS",
-    "lastName": "AAA",
-    "id": 12345,
-    "email": "user",
-    "password": "pass",
-    "phone": "43735684"
-  },
-  {
-    "name": "sfg",
-    "lastName": "sdfg",
-    "id": 8765,
-    "email": "email",
-    "password": "pass",
-    "phone": "06789674"
-  }
-]
+[{"name":"SSS","lastName":"AAA","id":12345,"email":"user","password":"pass"},{"name":"Suren","email":"kat025@mail.ru","id":"123","password":"1234","confirm":"1234"},{"name":"ss","email":"kkk","id":"12","password":"123","confirm":"123"},{"name":"mm","email":"m","id":"12","password":"123","confirm":"123"},{"name":"s","email":"k","id":"12","password":"123","confirm":"123"}]

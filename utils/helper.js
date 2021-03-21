@@ -21,12 +21,15 @@ export const login = async (email, password) => {
   return obj;
 };
 
-export const register = ({newUser}) => {
-  object.push(newUser);
-  fs.writeFile(path, JSON.stringify(object), (err) => {
-    if (err) {
-      console.log('err - ', err);
-    }
-    console.log('new object - ', object);
-  });
+export const register = async (newUser) => {
+  const email = object.find((item) => item.email === newUser.email);
+  if (email) {
+    Alert.alert('This Email is already exist', 'Try another Email', [
+      {text: 'OK', onPress: () => {}},
+    ]);
+    return;
+  } else if (newUser) {
+    object.push(newUser);
+  }
+  await fs.writeFile(path, JSON.stringify(object), 'utf8');
 };

@@ -21,9 +21,12 @@ import Card from '../../components/ui/Card/index';
 // @ts-ignore
 import hotels from '../../../DATA/Hotels.json';
 
-const Home = ({navigation}) => {
+const Home = ({navigation, route}) => {
   const [data, setData] = useState([]);
   const [featured, setFeatured] = useState([]);
+  const userData = route?.params?.data;
+
+  console.log('userData - ', userData);
 
   useEffect(() => {
     try {

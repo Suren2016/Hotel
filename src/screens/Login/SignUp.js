@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {useState} from 'react';
 import {
   View,
@@ -38,8 +39,17 @@ const SignUp = ({navigation}) => {
       ]);
       return null;
     } else {
-      register(values);
-      navigation.navigate('Home', {data: values});
+      register(values)
+        .then((res) => {
+          if (res) {
+            navigation.navigate('Home', {
+              screen: 'Home',
+              params: {data: values},
+            });
+          }
+        })
+        .catch((e) => console.log('err - ', e));
+      console.log('values - ', values);
     }
   };
 

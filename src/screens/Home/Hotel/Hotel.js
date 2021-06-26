@@ -44,17 +44,6 @@ const Hotel = ({navigation, route}) => {
 
   const item = route?.params?.item;
 
-  // /**
-  //  * @param {any} lat
-  //  * @param {any} lng
-  //  */
-  // const getPlaceName = async (lat, lng) => {
-  //   const url = `https://nominatim.openstreetmap.org/reverse?format=geojson&lat=${lat}&lon=${lng}`;
-  //   const res = await fetch(url);
-  //   // const json = await res.json();
-  //   console.log('res - ', res);
-  // };
-
   const nextImage = (modalImage) => {
     const images = item.imagURL;
     let index = images.indexOf(modalImage);

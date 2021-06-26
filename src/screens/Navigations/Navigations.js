@@ -23,15 +23,16 @@ const SignInSignUpStack = createStackNavigator();
 const TabStack = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
 const FilterStack = createStackNavigator();
-// const GallerylStack = createStackNavigator();
+const SignUpStack = createStackNavigator();
+const SignInStack = createStackNavigator();
 
 const SignInSignUpScreen = () => {
   return (
     <SignInSignUpStack.Navigator screenOptions={{headerShown: false}}>
-      <SignInSignUpStack.Screen name="SignIn" component={SignIn} />
-      <SignInSignUpStack.Screen name="SignUp" component={SignUp} />
+      <SignInSignUpStack.Screen name="SignIn" component={SignInScreen} />
+      <SignInSignUpStack.Screen name="SignUp" component={SignUpScreen} />
       <SignInSignUpStack.Screen
-        name="Home"
+        name="TabScreen"
         component={TabScreen}
         options={{gestureEnabled: false}}
       />
@@ -44,24 +45,25 @@ const SignInSignUpScreen = () => {
   );
 };
 
-// const GallerylStackScreens = () => {
-//   return (
-//     <GallerylStack.Navigator screenOptions={{headerShown: false}}>
-//       <GallerylStack.Screen
-//         name="Hotel"
-//         component={Hotel}
-//         options={{headerTitle: null}}
-//       />
-//       <GallerylStack.Screen
-//         name="Home"
-//         component={Home}
-//         options={{headerTitle: null}}
-//       />
-//     </GallerylStack.Navigator>
-//   );
-// };
+const SignUpScreen = () => {
+  return (
+    <SignUpStack.Navigator>
+      <SignUpStack.Screen name="SignUp" component={SignUp} />
+      <SignUpStack.Screen name="TabScreen" component={TabScreen} />
+    </SignUpStack.Navigator>
+  );
+};
 
-const HomeScreens = () => {
+const SignInScreen = () => {
+  return (
+    <SignInStack.Navigator>
+      <SignInStack.Screen name="SignIn" component={SignIn} />
+      <SignInStack.Screen name="Home" component={HomeScreens} />
+    </SignInStack.Navigator>
+  );
+};
+
+export const HomeScreens = () => {
   return (
     <HomeStack.Navigator screenOptions={{headerShown: false}}>
       <HomeStack.Screen

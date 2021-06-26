@@ -23,13 +23,15 @@ export const login = async (email, password) => {
 
 export const register = async (newUser) => {
   const email = object.find((item) => item.email === newUser.email);
-  if (email) {
+  if (!!email) {
     Alert.alert('This Email is already exist', 'Try another Email', [
       {text: 'OK', onPress: () => {}},
     ]);
-    return;
+    return false;
   } else if (newUser) {
     object.push(newUser);
+    await fs.writeFile(path, JSON.stringify(object), 'utf8');
+    return true;
   }
-  await fs.writeFile(path, JSON.stringify(object), 'utf8');
+  return false;
 };

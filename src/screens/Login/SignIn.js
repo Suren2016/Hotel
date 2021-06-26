@@ -35,7 +35,11 @@ const SignIn = ({navigation}) => {
       let data = await login(email, password);
       console.log('login data - ', data);
       if (data) {
-        navigation.navigate('Home', {data: data});
+        // navigation.navigate('TabScreen', {user: 'hello data'});
+        navigation.navigate('TabScreen', {
+          screen: 'TabScreen',
+          params: {user: 'Hello user'},
+        });
         reset();
       } else {
         Alert.alert('Invalid email or password', 'Try again', [

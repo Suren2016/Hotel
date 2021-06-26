@@ -1,32 +1,19 @@
 // @ts-nocheck
 import React, {useState, useEffect, Fragment} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  // @ts-ignore
-  ActivityIndicator,
-  Button,
-} from 'react-native';
+import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 
 import HeaderView from '../../components/ui/HeaderView/index';
-// @ts-ignore
 import FilterIcon from '../../resources/svg/filter_icon.svg';
-// @ts-ignore
-import {GRAY_LIGHT, WHITE} from '../../constants/styles';
+import {GRAY_LIGHT} from '../../constants/styles';
 import Card from '../../components/ui/Card/index';
 
-// @ts-ignore
 import hotels from '../../../DATA/Hotels.json';
 
-const Home = ({navigation, route}) => {
+const Home = ({route, navigation}) => {
   const [data, setData] = useState([]);
   const [featured, setFeatured] = useState([]);
-  const userData = route?.params?.data;
 
-  console.log('userData - ', userData);
+  console.log('route - ', route);
 
   useEffect(() => {
     try {
@@ -55,7 +42,6 @@ const Home = ({navigation, route}) => {
               image={item.imagURL[0]}
               textStyle={{fontSize: 16, fontWeight: '700'}}
               onPress={() => {
-                // console.log('image - ', item.id);
                 navigation.navigate('Hotel', {
                   item: item,
                 });
@@ -84,7 +70,6 @@ const Home = ({navigation, route}) => {
                 item.hasPrePeyment ? 'Has prepayment' : 'No prepeyment'
               }
               onPress={() => {
-                // console.log('imageURL - ', item.imagURL);
                 // @ts-ignore
                 navigation.navigate('Hotel', {
                   item: item,

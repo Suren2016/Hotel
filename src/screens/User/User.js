@@ -17,7 +17,7 @@ import TermsIcon from '../../resources/svg/terms_icon.svg';
 import PrivacyIcon from '../../resources/svg/privacy_icon.svg';
 // @ts-ignore
 import LogoutIcon from '../../resources/svg/logout_icon.svg';
-import {GRAY_LIGHT, SHADOW, WHITE} from '../../constants/styles';
+import {GRAY_LIGHT, WHITE} from '../../constants/styles';
 
 const User = ({navigation}) => {
   const handleURL = (url) => {
